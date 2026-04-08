@@ -1,0 +1,37 @@
+.engagement-container {
+    display: flex;
+    align-items: center;
+}
+
+.warning-icon {
+    color: #fe9339;
+}
+
+.slds-notify_alert {
+    margin-top: 0.5rem;
+}
+
+lightning-badge.success {
+    --slds-c-badge-color-background: #4bca81;
+    --slds-c-badge-text-color: #ffffff;
+}
+
+lightning-badge.warning {
+    --slds-c-badge-color-background: #fe9339;
+    --slds-c-badge-text-color: #ffffff;
+}
+
+lightning-badge.error {
+    --slds-c-badge-color-background: #ea001e;
+    --slds-c-badge-text-color: #ffffff;
+}
+
+lightning-badge.inverse {
+    --slds-c-badge-color-background: #080707;
+    --slds-c-badge-text-color: #ffffff;
+}
+
+lightning-badge.brand {
+    --slds-c-badge-color-background: #0176d3;
+    --slds-c-badge-text-color: #ffffff;
+}

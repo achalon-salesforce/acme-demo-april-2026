@@ -1,0 +1,58 @@
+<template>
+    <lightning-card title="Account Health" icon-name="standard:account">
+        <template if:true={hasData}>
+            <div class="slds-p-around_medium">
+                <!-- Account Tier -->
+                <div class="slds-m-bottom_medium">
+                    <div class="slds-text-title slds-m-bottom_x-small">Account Tier</div>
+                    <template if:true={accountTier}>
+                        <lightning-badge label={accountTier} class={tierVariant}></lightning-badge>
+                    </template>
+                    <template if:false={accountTier}>
+                        <span class="slds-text-color_weak">Not set</span>
+                    </template>
+                </div>
+
+                <!-- Account Health Status -->
+                <div class="slds-m-bottom_medium">
+                    <div class="slds-text-title slds-m-bottom_x-small">Health Status</div>
+                    <template if:true={accountHealth}>
+                        <lightning-badge label={accountHealth} class={healthVariant}></lightning-badge>
+                    </template>
+                    <template if:false={accountHealth}>
+                        <span class="slds-text-color_weak">Not set</span>
+                    </template>
+                </div>
+
+                <!-- Last Executive Engagement -->
+                <div class="slds-m-bottom_small">
+                    <div class="slds-text-title slds-m-bottom_x-small">Last Executive Engagement</div>
+                    <div class="engagement-container">
+                        <span class={showEngagementWarning}>{formattedEngagementDate}</span>
+                        <template if:true={showEngagementWarning}>
+                            <lightning-icon
+                                icon-name="utility:warning"
+                                alternative-text="Warning: Over 30 days since last engagement"
+                                size="x-small"
+                                class="slds-m-left_x-small warning-icon">
+                            </lightning-icon>
+                        </template>
+                    </div>
+                </div>
+
+                <template if:true={showEngagementWarning}>
+                    <div class="slds-notify slds-notify_alert slds-alert_warning" role="alert">
+                        <span class="slds-assistive-text">Warning</span>
+                        <h2>Executive engagement needed - over 30 days since last contact</h2>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <template if:false={hasData}>
+            <div class="slds-p-around_medium">
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+        </template>
+    </lightning-card>
+</template>
