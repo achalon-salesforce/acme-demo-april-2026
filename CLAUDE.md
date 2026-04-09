@@ -29,6 +29,18 @@ When the user asks to demo Claude Go or start a demo conversation:
      - Lightning Web Component (based on UI/UX needs)
    - Keep the plan simple and focused. All components should directly trace back to requirements in the discovery notes.
 
+6. **Build All Components**: After plan approval, write all metadata (custom fields, permission set, LWC, Apex, page layout) without additional approval checkpoints. Goal is a complete, ready-to-deploy artifact.
+
+7. **Ask for Deploy Target**: Once components are built, ask the user for the org alias where they'd like to deploy. They provide the alias at this point—do NOT hardcode org details in this file.
+
+8. **Deploy**: Execute the deployment using the provided org alias. Deployment includes:
+   - Custom fields
+   - Permission set
+   - LWC component (`accountHealthCard`)
+   - Apex controller (`AccountHealthCardController`)
+   - Account page layout with custom fields in their own "Account Health" section
+   - Permission set assignment to demo user
+
 ## LWC Component Requirements
 
 The accountHealthCard LWC must be **an executive-grade dashboard**, not a field display. This is the centerpiece of the demo that justifies custom development. It must include all of the following sections:
@@ -105,12 +117,6 @@ The accountHealthCard LWC must be **an executive-grade dashboard**, not a field 
 - **At-risk deal callouts** surface problems that would otherwise be buried in pipeline views
 - **Stage distribution** gives instant pipeline shape without running a report
 - **Proves ROI** of custom LWC + Apex investment over standard page layout fields
-
-6. **Automated Deployment**: Once planning is approved, execute:
-   - Deploy all metadata to the april golden org (custom fields, permission set, LWC, Apex)
-   - Add custom fields to the Account page layout **in their own "Account Health" section** (not mixed in with standard Account Information fields)
-   - Assign the permission set to the demo user
-   - Only manual step remaining: drag the LWC component onto the Account record page in Lightning App Builder
 
 ## Important Constraints
 
