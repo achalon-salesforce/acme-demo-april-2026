@@ -19,12 +19,15 @@ When the user asks to demo Claude Go or start a demo conversation:
 
 4. **Switch to Plan Mode**: Use the EnterPlanMode tool to create a structured implementation plan
 
-5. **Create Demo Build Plan**: Plan a simple Salesforce implementation including:
-   - Custom fields (based on data needs from disco)
-   - Permission set (based on user access requirements)
-   - Lightning Web Component (based on UI/UX needs)
-   
-   Keep the plan simple and focused. All components should directly trace back to requirements in the discovery notes.
+5. **Create Demo Build Plan FAST**: This is a demo, so speed matters. When in Plan Mode:
+   - **DO NOT use Explore or Plan agents** - you already have all the info from discovery notes and this CLAUDE.md file
+   - **Write the plan directly** to the plan file without exploration or delegation
+   - **Keep it under 2 minutes** from entering plan mode to exiting
+   - Plan should include:
+     - Custom fields (based on data needs from disco)
+     - Permission set (based on user access requirements)
+     - Lightning Web Component (based on UI/UX needs)
+   - Keep the plan simple and focused. All components should directly trace back to requirements in the discovery notes.
 
 ## LWC Component Requirements
 
